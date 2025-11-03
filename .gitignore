@@ -1,0 +1,149 @@
+# WordPress Core
+/wp-admin/
+/wp-includes/
+/wp-content/index.php
+/wp-content/languages
+/wp-content/upgrade/
+
+# WordPress Config
+wp-config.php
+wp-config-local.php
+wp-config-production.php
+
+# WordPress Database
+*.sql
+*.sql.gz
+*.sql.bz2
+
+# WordPress Uploads
+/wp-content/uploads/
+/wp-content/cache/
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/blogs.dir/
+
+# WordPress Plugins (uncomment if not developing custom plugins)
+/wp-content/plugins/
+# Uncomment lines below if developing custom plugins
+# !/wp-content/plugins/your-custom-plugin/
+
+# WordPress Themes (uncomment if not developing custom themes)
+/wp-content/themes/twenty*/
+# Keep your custom themes
+# !/wp-content/themes/your-custom-theme/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.test
+.environment
+
+# IDE Files
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PHPStorm
+.phpstorm.meta.php
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Atom
+.atom/
+
+# Build & Distribution
+/build/
+/dist/
+/public/build/
+/assets/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Package managers
+package-lock.json
+yarn.lock
+composer.lock
+vendor/
+
+# Logs
+*.log
+/logs/
+error_log
+access_log
+
+# System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Cache
+/wp-content/w3tc-config/
+.htaccess.bak
+
+# Security
+wp-config-sample.php
+.htpasswd
+.user.ini
+
+# Backup files
+*.bak
+*.backup
+*.old
+wp-content/backup*
+
+# WP CLI
+wp-cli.local.yml
+wp-cli.yml
+
+# Composer
+/vendor/
+composer.phar
+
+# NPM/Node
+node_modules/
+npm-debug.log
+.npm
+
+# Yarn
+yarn-error.log
+
+# WordPress specific
+wp-content/debug.log
+wp-content/mu-plugins/
+sitemap.xml
+sitemap.xml.gz
+
+# Plugin specific (uncomment to exclude)
+# /wp-content/plugins/akismet/
+# /wp-content/plugins/hello.php
+# /wp-content/plugins/advanced-custom-fields-pro/
+# /wp-content/plugins/wordfence/
+# /wp-content/plugins/wp-super-cache/
+
+# Allow custom development (uncomment as needed)
+# !/wp-content/themes/your-theme-name/
+# !/wp-content/plugins/your-plugin-name/
