@@ -2,10 +2,10 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-	<meta charset="<?php bloginfo('charset'); ?>">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<?php wp_head(); ?>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
@@ -15,90 +15,17 @@
             <img class="header_logo" src="<?php echo esc_url(get_theme_file_uri('src/icons/logo.svg')); ?>"
                  alt="irev logo"/>
         </div>
-        <nav class="header_nav">
-            <div class="header_menu">
-                <div class="header_menu_item" data-dropdown-trigger="product">
-                        <div class="header_menu_item_inner">
-                            <button>
-                                Product
-                            </button>
-                            <img src="<?php echo esc_url(get_theme_file_uri('src/icons/miniArrow.svg')); ?>"
-                                 alt="arrow"
-                                 class="header_menu_item_arrow_unselected"
-                            />
-                            <img src="<?php echo esc_url(get_theme_file_uri('src/icons/arrowSelected.svg')); ?>"
-                                 alt="arrow"
-                                 class="header_menu_item_arrow_selected"
-                            />
-                        </div>
-                </div>
-                <div class="header_menu_item" data-dropdown-trigger="solution">
-                    <div class="header_menu_item_inner">
-                        <button>
-                            Solution
-                        </button>
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/miniArrow.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_unselected"
-                        />
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/arrowSelected.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_selected"
-                        />
-                    </div>
-                </div>
-                <div class="header_menu_item">
-                        Pricing
-                </div>
-                <div class="header_menu_item" data-dropdown-trigger="resources">
-                    <div class="header_menu_item_inner">
-                        <button>
-                            Resources
-                        </button>
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/miniArrow.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_unselected"
-                        />
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/arrowSelected.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_selected"
-                        />
-                    </div>
-                </div>
-                <div class="header_menu_item" data-dropdown-trigger="company">
-                    <div class="header_menu_item_inner">
-                        <button>
-                            Company
-                        </button>
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/miniArrow.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_unselected"
-                        />
-                        <img src="<?php echo esc_url(get_theme_file_uri('src/icons/arrowSelected.svg')); ?>"
-                             alt="arrow"
-                             class="header_menu_item_arrow_selected"
-                        />
-                    </div>
-                </div>
-            </div>
-            <div class="nav_dropdown_container">
-                <div class="nav_dropdown" data-dropdown-content="product">
-                    <a>Lead Distribution</a>
-                    <a>Partner Platform</a>
-                </div>
-                <div class="nav_dropdown" data-dropdown-content="solution">
-                    <a>IGaming & Casino</a>
-                </div>
-                <div class="nav_dropdown" data-dropdown-content="resources">
-                    <a>Blog</a>
-                    <a>Affiliate Marketing Glossary</a>
-                </div>
-                <div class="nav_dropdown" data-dropdown-content="company">
-                    <a>About us</a>
-                    <a>Career</a>
-                    <a>Contact us</a>
-                </div>
-            </div>
+        <nav class="header_nav header_nav--horizontal">
+            <?php
+            $header_walker = new Header_Walker();
+            wp_nav_menu(array(
+                'theme_location' => 'header-menu',
+                'container' => false,
+                'items_wrap' => '%3$s',
+                'walker' => $header_walker
+            ));
+            echo $header_walker->get_dropdown_html();
+            ?>
         </nav>
         <button class="header_signIn">
             Sign In
@@ -110,4 +37,3 @@
         </button>
     </div>
 </header>
-

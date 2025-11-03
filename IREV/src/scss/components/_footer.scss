@@ -22,7 +22,7 @@ footer{
       z-index: -100;
     }
 
-    .footer_nav{
+    .footer_nav, #menu-footer-menu{
       height: 231px;
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -51,6 +51,7 @@ footer{
           li {
             word-break: break-word;
             overflow-wrap: break-word;
+            text-transform: capitalize;
           }
         }
       }

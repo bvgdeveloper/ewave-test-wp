@@ -8,6 +8,10 @@
   width: 100%;
   height: $header-height;
   color: #F8FAFF;
+  &_nav--horizontal {
+    display: flex;
+    gap: 36px;
+  }
 
   @media(max-width: $tablet-width){
     height: 57px;
